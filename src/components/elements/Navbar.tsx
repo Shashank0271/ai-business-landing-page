@@ -1,13 +1,8 @@
 import logoIcon from "../../assets/icon.svg"; // Adjust the path to your SVG file
+import { navItems } from "../../utils/nav-items";
 import Button from "../shared/Button";
 
 const Navbar = () => {
-  const navItems = [
-    { href: "#", text: "Home" },
-    { href: "#services", text: "Services" },
-    { href: "#about-us", text: "About Us" },
-    { href: "features", text: "Features" },
-  ];
 
   return (
     <header className="flex flex-row justify-between items-center p-4 max-container">

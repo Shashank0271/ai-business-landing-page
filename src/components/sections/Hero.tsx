@@ -1,11 +1,18 @@
 import Button from "../shared/Button";
 
 const Hero = () => {
+  const gridData = [
+    { value: "100+", title: "Ai Models Implemented" },
+    { value: "250+", title: "Enterprise clients" },
+    { value: "99.9%", title: "Uptime Guarantee" },
+    { value: "10+", title: "Years of innovation" },
+  ];
+
   return (
-    <div className="my-24">
+    <div className="max-container">
       <div
         className="flex lg:flex-row flex-col lg:text-start lg:justify-start text-center 
-                    justify-center w-full max-container px-4 my-32 lg:gap-12 gap-10"
+                    justify-center w-full  px-4 my-24 lg:gap-12 gap-10"
       >
         {/* LEFT SECTION */}
         <div className="flex flex-col justify-between  lg:items-start items-center lg:w-1/2 gap-6">
@@ -58,17 +65,28 @@ const Hero = () => {
         </div>
 
         {/* IMAGE */}
-        <div className="lg:w-1/2 lg:h-auto bg-red-400 max-w-4xl rounded-3xl self-center flex flex-1">
+        <div className="flex flex-1 lg:w-1/2 lg:h-auto max-w-3xl max-lg:self-center">
           <img
             alt="person wearing VR headset"
-            className="rounded-3xl object-cover min-h-full"
+            width={2350}
+            height={2359}
+            className="rounded-3xl object-cover"
             src="https://images.pexels.com/photos/7773731/pexels-photo-7773731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
         </div>
       </div>
 
       {/* metrics grid */}
-      <div className="grid grid-cols-4"></div>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 md:w-2xl sm:w-xl max-sm:w-md lg:divide-x border mx-auto max-w-5xl rounded-3xl text-center py-6 shadow-xl">
+        {gridData.map(({ title, value }, _) => (
+          <div className="flex flex-col gap-2 items-center">
+            <div className="font-bold text-xl sm:text-2xl md:text-4xl text-heading-1">
+              {value}
+            </div>
+            <div className="font-medium text-sm text-heading-1">{title}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
